@@ -679,6 +679,129 @@ else :
 '''
 
 
+'''
+# Fonksiyonlar
+# Metotlar   , nokta ile metotlar gorulur
+myString  = 'hello'
+print(myString.upper())   # buyuk harfle yazar
 
 # Fonksiyonlar
-# Metotlar
+def sayHello() :   # Fonksiyon
+    print('Hello')
+sayHello()   # Fonksiyon calisir
+
+def sayHello(name) :
+    print('Hello ' + name)
+sayHello('Aa')   # Hello Aa cevabini verir
+
+def sayHello(name) :
+    return 'Hello ' + name
+msg = sayHello('Aa')
+print(msg)   # Hello Aa cevabini verir
+
+def total(num1, num2) :
+    return num1 + num2
+a = total(2,3)
+print(a)
+
+def yasHesapla(dogumyili) :
+    return 2020 - dogumyili
+print( yasHesapla(1990) )
+
+def emeklilikKacYilKaldi(dogumyili, isim) : 
+    yas = yasHesapla(dogumyili)   # fonksiyon icinde fonksiyon var bir ustteki fonksiyon
+    emeklilik = 65 - yas
+    if emeklilik > 0 :
+        print(f'emekliliginize {emeklilik} yil kaldi')
+    else :
+        print('zaten emekli oldunuz')
+emeklilikKacYilKaldi(1974, 'aa')
+'''
+
+# # Resmi fonksiyon boyle kullanilir ve help(fonkismi) ile bilgileri okunur, ogrenilir
+# # not : basindan # yorunlari kaldir...
+# def emeklilikKacYilKaldi(dogumyili, isim) : 
+#     '''
+#     DOCSTRING: Dogum yiliniza gore emekliliginize kac yil kaldi
+#     INPUT: Dogum yili
+#     OUTPUT: Hesaplanan yil bilgisi
+#     '''
+#     yas = yasHesapla(dogumyili)   
+#     emeklilik = 65 - yas
+#     if emeklilik > 0 :
+#         print(f'emekliliginize {emeklilik} yil kaldi')
+#     else :
+#         print('zaten emekli oldunuz')
+# help(emeklilikKacYilKaldi)   # help(fonkismi) ile '''xxx''' bilgileri okunur, ogrenilir
+# print(help(emeklilikKacYilKaldi))   # aynisi
+
+'''
+# Fonksiyon parametreleri
+# Return anlamak icin. Bu 2 ornekte ayni. return fonksiyon icini dis dunyaya aktarmayi saglar. return ile fonksiyon icinde yapilan islemler dis dunyaya tanitilir
+def fonk(x) :   # 1.ORNEK return = dis dunyaya aktarmaya yarar
+    return 10 - x   
+print( fonk(2) )
+def fonk(x) :   # 2.ORNEK return = dis dunyaya aktarmaya yarar
+    print(10 - x)   
+fonk(2)
+
+def changeName(n) :
+    n = 'Aa'
+name = 'Bb'
+changeName(name)
+print(name)   # fonksiyon icini degistirdi, sonuc Bb olur
+
+def changeCity(n) :
+    n[0] = 'istanbul'
+sehirler = ['ankara', 'izmir']
+changeCity(sehirler)   # fonksiyon listenin 0. ogesini degistirmeye yonelik, sonuc ['istanbul', 'izmir'] olur
+print(sehirler)
+
+def add(a,b) :
+    return sum((a,b))
+print(add(5,4))
+
+def add(a, b, c = 0) :  # c=0 dersek (a,b) de calisir (a,b,c) de calisir
+    return sum((a, b, c))
+print(add(2,3))   # a, b de calisti
+print(add(2, 3, 4))   # a, b, c de calisti
+
+def add( *params ) :   # sonsuz deger atanabilir . tuple da * / dict ** kullanilir
+    return sum((params))
+print(add(10, 20, 30, 40))
+print(add(10, 20, 30, 40, 50, 60))
+
+def add( *params ) :   # sonsuz deger atanabilir 
+    print(params)   # tum params lari gorebiliriz
+    return sum((params))
+print(add(10, 20, 30, 40, 50, 60))
+
+# Alistirma 
+# sum kullanmadan topla
+def add( *params ) :
+    sum = 0
+    for n in params :
+        sum = sum + n
+    return sum
+print(add(10, 20, 30, 40, 50, 60))
+
+# Alistirma 
+# Bilgileri tanimlayan bir fonk yaz
+def displayUser( **params ) :   # sonsuz deger atanabilir . tuple da * / dict ** kullanilir
+    for key, value in params.items():
+        print('{} is {}'.format(key, value))
+displayUser(name='Aa', age=10)
+displayUser(name='Aa', age=10, city='istanbul')
+
+def fonk(a, b, c, *args, **kwargs) :   # tuple da * / dict ** kullanilir
+    print(a)
+    print(b)
+    print(c)
+    print(args)
+    print(kwargs)
+fonk(10, 20, 30, 40, 50, key1='value1')   # once a b c yi aldi, sonra tuple aldi, sonra dict aldi
+fonk(10, 20, 30, 40, 50, key1='value1', key2='value2')   # once a b c yi aldi, sonra tuple aldi, sonra dict aldi
+'''
+# Alistirma 
+
+
