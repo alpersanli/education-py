@@ -680,7 +680,7 @@ else :
 
 
 '''
-# Fonksiyonlar
+# Fonksiyonlar        Fonksiyon ici local dir. Fonksiyon disi global dir. 
 # Metotlar   , nokta ile metotlar gorulur
 myString  = 'hello'
 print(myString.upper())   # buyuk harfle yazar
@@ -801,7 +801,96 @@ def fonk(a, b, c, *args, **kwargs) :   # tuple da * / dict ** kullanilir
     print(kwargs)
 fonk(10, 20, 30, 40, 50, key1='value1')   # once a b c yi aldi, sonra tuple aldi, sonra dict aldi
 fonk(10, 20, 30, 40, 50, key1='value1', key2='value2')   # once a b c yi aldi, sonra tuple aldi, sonra dict aldi
-'''
-# Alistirma 
 
+# Alistirma 
+# Gomderilen bir kelimeyi belirtilen kez ekranda gosteren fonk
+def yazdir( kelime, adet ) :
+    print(kelime * adet)
+yazdir('Merhaba\n', 3)
+
+# Alistirma 
+# Kendine gonderilen sinirsiz sayidaki parametreyi bir listede ceviren fonk
+def listeOlustur( *params ) :
+    liste = []
+    for x in params :
+        liste.append(params)
+        return liste
+print(listeOlustur(10, 20, 30, 'Aa'))
+
+# Alistirma 
+# Gonderilen 2 sayi arasindaki tum asal sayilari bulan fonk
+def asalSayiBulma( sayi1, sayi2 ) :
+    for sayi in range(sayi1, sayi2+1) :   # sayi2 yi de dahil etmek icin +1 yazdik
+        if sayi > 1 :
+            for i in range(2, sayi) : 
+                if (sayi % i == 0) :
+                    break
+            else :   # FOR DONGUSUNUN ELSE KISMINDA eger sayi asal ise sayinin kendisini yazdiralim
+                    print(sayi)   # burada 11 ve 13 yazdirir
+asalSayiBulma(10,15)
+
+# Alistirma 
+# Gonderilen bir sayinin tam bolenlerini bir liste seklinde gosteren fonk
+def tamBolenleriBul( sayi ) :
+    tamBolenlerListesi = [] 
+    for i in range( 2, sayi ) :
+        if sayi % i == 0 :
+            tamBolenlerListesi.append(i)
+    return tamBolenlerListesi
+print(tamBolenleriBul( 30 ))
+
+# Lambda Expression, Map ve Filter
+def square( num ) : return num ** 2   # Tek satirda da yazabiliriz
+print(square(5))
+
+liste = [1, 2, 3, 4]   
+print( map(square, liste) )   # map ile listedeki her elemani fonksiyona katabiliriz ama sonucunda bize bir adres verir <map object at 0x01CDE718>
+print( list( map(square, liste) ))   #list kodu icinde map kodunu calistirirsak bize sonucu verir
+for item in  map(square, liste) :   # map i yazdirmanın 2. yolu
+    print(item)
+
+print( list(map(lambda num : num ** 3 , liste)) )   # map icine lambda ile fonk yazdik
+
+square = lambda num : num ** 3   # seklinde de gosterilebilir
+print( square(5) )
+
+# Alistirma 
+# Bankamatik Uygulamasi
+hesapAa = {
+    'ad' : 'Aa',
+    'hesapNo' : '1',
+    'bakiye' : 3000,
+    'ekHesap' : 2000
+}
+hesapBb = {
+    'ad' : 'Bb',
+    'hesapNo' : '2',
+    'bakiye' : 2000,
+    'ekHesap' : 1000
+}
+def paraCek(hesap, miktar) :
+    print(f"Merhaba {hesap['ad']}")
+    if hesap['bakiye'] >= miktar :
+        hesap['bakiye'] -= miktar
+        print('Paranizi alabilirsiniz.')
+    else :
+        toplam = hesap['bakiye'] + hesap['ekHesap']
+        if toplam >= miktar :
+            ekHesapKullanimi = input('Ek hesap kullanilsin mi? (e/h)')
+            if ekHesapKullanimi == 'e' :
+                ekHesapKullanilacakMiktar = miktar - hesap['bakiye']
+                hesap['bakiye'] = 0
+                hesap['ekHesap'] -= ekHesapKullanilacakMiktar
+                print('Paranizi alabilirsiniz.')
+            else :
+                print(f"Hesabinizda {hesap['bakiye']} bulunmaktadir.")
+        else :
+            print('Bakiyeniz yetersiz.')
+paraCek(hesapAa, 3000)
+paraCek(hesapAa, 2000)
+'''
+
+
+
+# Nesne Tabanli Programlama
 
