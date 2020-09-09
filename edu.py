@@ -1127,5 +1127,75 @@ print(str(m))   # Aa by Bb cevabini verir
 """
 
 
+"""
 # Pytonda Moduller
+# Moduller kendileri arasinda iletisim saglayabilir
+# https://pypi.org
+# > pip install package-name 
 
+# math modulu
+import math
+tumFonksiyonlar = dir(math)   # Tum fonksiyonlari gosterir
+print(tumFonksiyonlar)
+
+import math
+tumFonksiyonlar = help(math)   # Tum fonksiyonlari aciklar
+print(tumFonksiyonlar)
+
+import math
+tekFonksiyon = help(math.factorial)   # Tek fonksiyonu aciklar
+print(tekFonksiyon)
+
+import math
+print(math.sqrt(49))
+print(math.factorial(5))
+
+import math as islem   # Farkli bir isimle tanittik
+print(islem.factorial(4))
+
+from math import *   # tum fonklar kullanilabilir math.sqrt yerine sadece sqrt yazilabilir
+print(sqrt(25))
+
+from math import factorial,sqrt   # sadece factorial ve sqrt fonklar kullanilabilir math.sqrt yerine sadece sqrt yazilabilir
+print(sqrt(25))
+
+# random modulu
+import random
+print(dir(random))
+print(help(random.randint))
+
+import random
+print(random.random())   # 0.0-1.0 arasinda rastgele sayi uretir
+print(random.random() * 100) 
+print(random.uniform(1, 10))   # 1-10 arasinda rastgele sayi uretir
+print(int(random.uniform(1, 10)))   # 1-10 arasinda rastgele int tam sayi uretir
+print(random.randint(1, 10))   # tam sayi uretir
+
+# liste icerisinden random sececegim
+import random
+names = ["Aa", "Bb", "Cc", "Dd"]   # 4 adet yani 0-3 arasi
+print(names[random.randint(0, 3)])
+print(names[random.randint(0, len(names)-1)])   # len(names)-1 = sonuncu elemani boyle belirtebiliriz
+print(random.choice(names))   # Boylede rastgele secilebilir
+
+# Alistirma 
+# 0-10 arasinda liste olustur ve liste icindeki sayilarin yerlerini dagit
+import random
+liste = list(range(10))
+random.shuffle(liste)
+print(liste)
+
+# Alistirma 
+# 0-100 arasindan rastgele 3 sayi al
+import random
+liste = range(100)
+result = random.sample(liste, 3)
+print(result)
+
+# Kendi modulunu olusturmak
+# example.py olustur farkli bir py de import example yazildiginda gelir
+"""
+
+
+
+# Hata ve Hata Yonetimi
