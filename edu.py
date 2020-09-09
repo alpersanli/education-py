@@ -891,6 +891,241 @@ paraCek(hesapAa, 2000)
 '''
 
 
+"""
+# Nesne Tabanli Programlama / Object Oriented Programing (OOP)
+# class
+class Person : 
+    pass   # bos class if vb yaptiginda pass dersen hata vermez
+    # class attributes
+    # constructor (yapici method)
+    # object attributes
+    # methods
+# object(instance)
 
-# Nesne Tabanli Programlama
+# constructor (yapici method) , object attributes
+class Person :
+    def __init__(self, name, year) :
+        self.name = name
+        self.year = year
+        print('init modulu calisti')
+p1 = Person('Aa', 2000) 
+p2 = Person('Bb', 2005) 
+print(f"p1 : name: {p1.name} year: {p1.year}")
+print(f"p2 : name: {p2.name} year: {p2.year}")
+
+# 2 .YOL
+class Person :
+    def __init__(self, name, year) :
+        self.name = name
+        self.year = year
+        print('init modulu calisti')
+p1 = Person(name = 'Aa', year = 2000)   # 2. YOL    
+p2 = Person(name = 'Bb', year = 2005)   # 2. YOL  
+print(f"p1 : name: {p1.name} year: {p1.year}")
+print(f"p2 : name: {p2.name} year: {p2.year}")
+
+# class attributes
+class Person :
+    adress = 'no information'   # direk class a atadik   
+    def __init__(self, name, year) :
+        self.name = name
+        self.year = year
+        print('init modulu calisti')
+p1 = Person(name = 'Aa', year = 2000) 
+p2 = Person(name = 'Bb', year = 2005)
+print(f"p1 : name: {p1.name} year: {p1.year} adress: {p1.adress}")   #bu isleme accesing object attributes denir
+print(f"p2 : name: {p2.name} year: {p2.year} adress: {p2.adress}")
+
+# updating yapmak istersek:
+class Person :
+    adress = 'no information'     
+    def __init__(self, name, year) :
+        self.name = name
+        self.year = year
+        print('init modulu calisti')
+p1 = Person(name = 'Aa', year = 2000) 
+p2 = Person(name = 'Bb', year = 2005)
+p1.name = 'Cc'   # update ettik
+p2.adress = 'Turkey'   # update ettik
+print(f"p1 : name: {p1.name} year: {p1.year} adress: {p1.adress}")   
+print(f"p2 : name: {p2.name} year: {p2.year} adress: {p2.adress}")
+
+# Nesne Tabanli Programlama Metotlar
+class Person:
+    adress = 'no information'
+    def __init__(self, name, year):
+        self.name = name
+        self.year = year
+        print('init modulu calisti')
+    # INSTANCE METHODS
+    def intro(self):
+        print('Hello There I am ' + self.name)
+p1 = Person(name = 'Aa', year = 2000) 
+p2 = Person(name = 'Bb', year = 2005)
+p1.intro()   # Method calisti
+p2.intro()   # Method calisti
+
+class Person:
+    adress = 'no information'
+    def __init__(self, name, year):
+        self.name = name
+        self.year = year
+        print('init modulu calisti')
+    def intro(self):
+        print('Hello There I am ' + self.name)
+    # INSTANCE METHODS
+    def calculateAge(self):
+        return 2020-self.year
+p1 = Person(name = 'Aa', year = 2000) 
+p2 = Person(name = 'Bb', year = 2005)
+p1.intro()
+p2.intro()
+print(f"name : {p1.name} I am {p1.calculateAge()} years old")   # Method calisti
+print(f"name : {p2.name} I am {p2.calculateAge()} years old")   # Method calisti
+
+class Circle:
+    # Class object attribute
+    pi = 3.14
+    def __init__(self, yaricap=1):
+        self.yaricap = yaricap
+    def cevre_hesapla(self):
+        return 2*self.pi*self.yaricap
+    def alan_hesapla(self):
+        return self.pi*(self.yaricap**2)
+c1 = Circle()   #yaricap otomatik 1 e esit olur
+c2 = Circle(5)
+print(f"c1 : alan = {c1.alan_hesapla()} cevre = {c1.cevre_hesapla()}")
+print(f"c2 : alan = {c2.alan_hesapla()} cevre = {c2.cevre_hesapla()}")
+
+# Nesne Tabanli Programlama Kalitim Inheritance
+class Person():
+    def __init__(self):
+        print("Person created")
+class Student(Person):   # PERSON CLASS inin sahip oldugu tum ozellikler Student class i da sahip oluyor
+    pass
+p1 = Person()   # Person class i calisir
+p2 = Student()   # Student class i calisir Person class ozelliklerini tasir
+
+class Person():
+    def __init__(self):
+        print("Person created 2")
+class Student(Person):   # PERSON CLASS inin sahip oldugu tum ozellikler Student class i da sahip oluyor
+    def __init__(self):
+        Person.__init__(self)   # Student class icinde Person class i calistirir   
+        print("Student created 2")   # Student class i calisir
+p1 = Person()   # Sadece class Person calisir
+p2 = Student()    # class Student calisir
+
+# Example
+class Person():
+    def __init__(self, fname, lname):
+        self.firstName = fname
+        self.lastName  = lname
+        print("Person created 3")
+class Student(Person):
+    def __init__(self, fname, lname):
+        Person.__init__(self, fname, lname)
+        print("Student Created 3")
+p1 = Person("Aa", "Bb")
+p2 = Student("Cc", "Dd")
+print(p1.firstName + " " + p1.lastName)
+print(p2.firstName + " " + p2.lastName)
+
+# Example
+class Person():
+    def __init__(self, fname, lname):
+        self.firstName = fname
+        self.lastName  = lname
+        print("Person created 4")
+    def who_am_i(self):
+        print("I am a person")
+    def eat(self):
+        print("I am eating")
+class Student(Person):
+    def __init__(self, fname, lname):
+        Person.__init__(self, fname, lname)
+        print("Student Created 4")
+p1 = Person("Aa", "Bb")
+p2 = Student("Cc", "Dd")
+p1.who_am_i()   # ustte p1 i person a atadik persondan whoami def ini sectik
+p2.who_am_i()   # student i person a bagladik o yuzden tanidi
+p1.eat()
+p2.eat()   # student i person a bagladik o yuzden tanidi
+
+# Example Override
+class Person():
+    def __init__(self, fname, lname):
+        self.firstName = fname
+        self.lastName  = lname
+        print("Person created 5")
+    def who_am_i(self):   # altta ayni isimle fonk acarsak bu fonk ezilir
+        print("I am a person")
+class Student(Person):
+    def __init__(self, fname, lname):
+        Person.__init__(self, fname, lname)
+        print("Student Created 5")
+    def who_am_i(self):
+        print("I am a Student")   # AYNI FONK STUDENT TA OLDUP ICIN PERSON I EZDI / OVERRIDE
+p1 = Person("Aa", "Bb")
+p2 = Student("Cc", "Dd")
+p2.who_am_i()   # AYNI FONK STUDENT TA OLDUP ICIN PERSON I EZDI / OVERRIDE
+
+# Example Student fazla parametre alsin. Ama bu student a ozel komut
+class Person():
+    def __init__(self, fname, lname):
+        self.firstName = fname
+        self.lastName  = lname
+        print("Person created 6")
+    def who_am_i(self):  
+        print("I am a person")
+class Student(Person):
+    def __init__(self, fname, lname, number):   # Fazla parametre alsin number
+        Person.__init__(self, fname, lname)
+        self.studentNumber = number   # fazla parametreyi tanimladim
+        print("Student Created 6")
+p1 = Person("Aa", "Bb")
+p2 = Student("Cc", "Dd", 1500)   # fazla parametreyi yazdim 1500
+print(p2.firstName + " " + p2.lastName + " " + str(p2.studentNumber))
+
+# Example Super() komutu
+class Person():
+    def __init__(self, fname, lname):
+        self.firstName = fname
+        self.lastName  = lname
+        print("Person created 7")
+    def who_am_i(self):  
+        print("I am a person")
+class Student(Person):
+    def __init__(self, fname, lname, number):  
+        Person.__init__(self, fname, lname)
+        self.studentNumber = number   
+        print("Student Created 7")
+class Teacher(Person):   #Super() burada gosterecegim
+    def __init__(self, fname, lname, branch):
+        super().__init__(fname, lname)   # self komutu kullanmamiza gerek kalmiyor
+        self.branch = branch
+    def who_am_i(self):
+            print(f"I am a {self.branch} teacher")
+t1 = Teacher("Ee", "Ff", "Math")
+t1.who_am_i()   # I am a Math teacher
+
+# Nesne Tabanli Programlama Ozel Metotlar / Special Methods
+class Movie():
+    def __init__(self, title, yonetmen):
+        self.title = title
+        self.yonetmen = yonetmen
+        print("Movie objesi olusturuldu")
+    def __str__(self):   #str modulunu print te gosterirsek 
+        return f"{self.title} by {self.yonetmen}"
+m = Movie("Aa", "Bb")
+print(str(m))   # Aa by Bb cevabini verir
+
+#del m   # SILER 
+#print(m)   # hata verir
+
+# https://docs.python.org/3/reference/datamodel.html    gibi kaynaklarda fazlasi mevcut
+"""
+
+
+# Pytonda Moduller
 
