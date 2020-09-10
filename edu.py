@@ -1197,5 +1197,80 @@ print(result)
 """
 
 
+"""
+# Hata (Error) ve Hata Yonetimi (Error Handling)
+# https://docs.python.org/3/library/exceptions.html
+# https://docs.python.org/3/tutorial/errors.html
 
-# Hata ve Hata Yonetimi
+try:
+    x = int(input("x: "))
+    y = int(input("y: "))
+    print(x/y)
+except ZeroDivisionError:   # 0 a bolunemez hatasi. error yapip programi durdurmasini engeller ONEMLİ
+    print("y=0 olamaz")
+except ValueError:
+    print("sayisal deger girmelisin")   # sayisal deger girmezse bu hatayi vermesini engeller program calisir
+
+try:
+    x = int(input("x: "))
+    y = int(input("y: "))
+    print(x/y)
+except (ZeroDivisionError, ValueError):   # Hepsi ayni satirda da olabilir
+    print("yanlis bilgi girdiniz")
+
+try:
+    x = int(input("x: "))
+    y = int(input("y: "))
+    print(x/y)
+except (ZeroDivisionError, ValueError) as e:   # as e dersek hatayi aciklar
+    print("yanlis bilgi girdiniz")
+    print(e)
+
+try:
+    x = int(input("x: "))
+    y = int(input("y: "))
+    print(x/y)
+except:   # tum hatalari kapsar
+    print("yanlis bilgi girdiniz")
+
+try:
+    x = int(input("x: "))
+    y = int(input("y: "))
+    print(x/y)
+except: 
+    print("yanlis bilgi girdiniz")
+else:   # except in else si. hatasiz durumda
+    print("her sey yolunda")
+
+while True:   # Sonsuza kadar dondurur
+    try:
+        x = int(input("x: "))
+        y = int(input("y: "))
+        print(x/y)
+    except: 
+        print("yanlis bilgi girdiniz")
+    else:   
+        print("her sey yolunda")
+        break   # BREAK DERSEK DOGRU WHILE TRUE DURUR 
+
+while True: 
+    try:
+        x = int(input("x: "))
+        y = int(input("y: "))
+        print(x/y)
+    except Exception as ex:   # Exception tum hatalari kapsar ve aex olarak tanimladik 
+        print("yanlis bilgi girdiniz" + ex)   # hatayi bize soyleyecek
+    else:   
+        print("her sey yolunda")
+        break  
+
+# Alistirma 
+# Hata nesnesi olusturma eger x 5 ten buyuk olursa hata versin
+x = int(input("x: "))
+if x > 5:
+    raise Exception("x 5 ten buyuk olamaz")   # raise Exception("...") komutu ile yapilir
+"""
+
+
+
+# Dosya Yonetimi / Opening Files & Writing
