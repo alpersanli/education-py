@@ -1272,5 +1272,54 @@ if x > 5:
 """
 
 
-
+"""
 # Dosya Yonetimi / Opening Files & Writing
+# open(dosyaAdi, dosyaErişmeModu)
+# dosyaErişmeModu = dosyayi hangi amacla actigimizi belirtir
+# "w": (Write) yazma modu. Dosyayı konumda oluşturur. Dosya içeriğini siler ve yeniden ekleme yapar. 
+# "a": (Append) ekleme. Dosya konumda yoksa oluşturur.
+# "r": (Read) okuma. varsayılan. dosya konumda yoksa hata verir.
+# "x": (Create) oluşturma. Dosya zaten varsa hata verir.
+
+file = open("newfile.txt","w")   # acti
+file = open("C:/users/alptunga/desktop/newfile.txt","w")   # C:/users/alptunga/desktop/newfile.txt burada dosya olusturur
+file.close()   # kapatti
+
+file = open("newfile.txt","w",encoding='utf-8')   # encoding='utf-8' turkce karakter gibi birçok karakteri okumasini saglar
+file.write("Aa")   # dosya icine Aa yazar
+file.close()
+
+file = open("newfile.txt","a",encoding='utf-8')   # a Append var olan dosya icine ekleme yapar
+file.write("\nBb")
+file.write("Cc\n")
+file.close()
+
+file = open("newfile2.txt","x",encoding='utf-8')
+
+content = file.read()   # var olan dosyayi okur
+print("içerik")
+print(content)
+content = file.read(5)   #5 karakter okur
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
