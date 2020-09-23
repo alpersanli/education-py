@@ -1,12 +1,8 @@
 # ... py deneme.py  veya  python deneme.py
 # (''')(''') yorum yapar. Veya satirlari sec ctrl+k+c  hepsi yorum satiri olur; kaldirmak icinde ctrl+k+u yaparak yorum satiri kaldirilir
-
-
 """
 print("Merhaba")
 """
-
-
 """
 # Integer = 5 tam sayi
 # Floating = 2.1 , 0.0 , 2.5 virgullu
@@ -18,8 +14,6 @@ print(x)
 print(y)
 print(z)
 """
-
-
 """
 # Musteri adi , soyadi , cinsiyeti
 musteriAdi = "Aa"
@@ -27,8 +21,6 @@ musteriSoyadi = 'Bb'
 musteriCinsiyeti = True    # Erkek
 print(musteriAdi)
 """
-
-
 '''
 x = input("1.sayi= ")
 y = input("2.sayi= ")
@@ -37,8 +29,6 @@ print("Toplam sayi= ",toplam)   # String algilar 10 20 dersen sonucta 1020 yan y
 toplam = int(x) + int(y)
 print("Toplam sayi= ",toplam)   # int sayi algilar 10 20 dersen sonucta 30 olur
 '''
-
-
 '''
 pi = 3.14
 r = float(input("Yari cap= "))
@@ -52,8 +42,6 @@ age = 20
 print("My name is " + name + ' ' + surname + ' and I am ' + str(age) + ' years old.')
 print("My name is " + name + ' ' + surname + ' and \n I am ' + str(age) + ' years old.')   # \n alt satira indirir
 '''
-
-
 '''
 a = 'AaBb'
 print(a[0])
@@ -76,8 +64,6 @@ print(a)
 b = a.replace('B','F')   # B gordugun yeri F yap demek.  
 print(b)
 '''
-
-
 '''
 name = 'Aa'
 surname = 'Bb'
@@ -88,8 +74,6 @@ print("My name is {n} {s}" .format( n=name, s=surname ))
 print("My name is {s} {n}" .format( n=name, s=surname ))
 print( f"My name is {name} {surname}")
 '''
-
-
 '''
 # Pyton String Methods 'https://www.w3schools.com/python/python_ref_string.asp' & 'https://docs.python.org/2/library/string.html'
 name = 'aa BB cc DD'
@@ -138,8 +122,6 @@ print(name5)
 name6 = 'Merhaba'.center(50,'*')
 print(name6)
 '''
-
-
 '''
 # List
 name = 'My name is Aa'.split()
@@ -219,8 +201,6 @@ ekle = input("Listeye ekle : ")
 my_list7.append(ekle)
 print(my_list7)
 '''
-
-
 '''
 # Tuple 
 my_tuple = 1, 2, 'Aa'   # () içinde de gosterilebilir
@@ -234,8 +214,6 @@ my_tuple2 = ( 5, 6, 7)
 my_tuple3 = my_tuple + my_tuple2   # tuple leri birlestirir
 print(my_tuple3)
 '''
-
-
 '''
 # Dictionary, key value bilgisiyle calisir
 listA = ['Aa', 'Bb', 'Cc']
@@ -265,8 +243,6 @@ print(users['Messi'])   # tuple degerlerini verir
 print(users['Messi']['age'])   # 35 cevabini verir
 print(users['Ronaldo']['number'][1])   # number icindeki listedeki 7 numarasini verir
 '''
-
-
 '''
 # Sets 
 listA = {'Aa', 'Bb', 'Cc'}
@@ -288,8 +264,6 @@ print(listA)
 listD = [1, 1, 2, 2, 3, 3, 3]
 print(set(listD))   # tekrarlanan sayilar cikarilir
 '''
-
-
 '''
 # Atama Operatorleri
 x, y, z = 1, 2, 3   # x=1, y=2, z=3
@@ -315,8 +289,6 @@ user = username == 'Aa'
 passw = password == '12'
 print(f'Username: {user}, password:  {passw}')
 '''
-
-
 '''
 # Mantiksal operatorler
 x = 6
@@ -330,8 +302,6 @@ print(result)
 result = not(x > 5)
 print(result)
 '''
-
-
 '''
 # Identity Operator: is / Membership Operator: in
 x = 5
@@ -344,8 +314,6 @@ print(x is y)   # False verir
 print(x is not y)   # True verir
 print(1 in x)   # True verir. 1 x in icinde vardir
 '''
-
-
 '''
 # If ve else bloklari
 x = 1
@@ -374,8 +342,6 @@ x = datetime.datetime.now()
 print(x.year)
 print(x.strftime("%A"))
 '''
-
-
 '''
 # Donguler For, While, Break, Continue
 # For
@@ -677,8 +643,6 @@ if asalmi :   # true ise asal
 else : 
     print('asal degil')
 '''
-
-
 '''
 # Fonksiyonlar        Fonksiyon ici local dir. Fonksiyon disi global dir. 
 # Metotlar   , nokta ile metotlar gorulur
@@ -720,13 +684,13 @@ emeklilikKacYilKaldi(1974, 'aa')
 
 # # Resmi fonksiyon boyle kullanilir ve help(fonkismi) ile bilgileri okunur, ogrenilir
 # # not : basindan # yorunlari kaldir...
-# def emeklilikKacYilKaldi(dogumyili, isim) : 
+# def emeklilikKacYilKaldi(dogumyili, isim) :
 #     '''
 #     DOCSTRING: Dogum yiliniza gore emekliliginize kac yil kaldi
 #     INPUT: Dogum yili
 #     OUTPUT: Hesaplanan yil bilgisi
 #     '''
-#     yas = yasHesapla(dogumyili)   
+#     yas = yasHesapla(dogumyili)
 #     emeklilik = 65 - yas
 #     if emeklilik > 0 :
 #         print(f'emekliliginize {emeklilik} yil kaldi')
@@ -734,7 +698,6 @@ emeklilikKacYilKaldi(1974, 'aa')
 #         print('zaten emekli oldunuz')
 # help(emeklilikKacYilKaldi)   # help(fonkismi) ile '''xxx''' bilgileri okunur, ogrenilir
 # print(help(emeklilikKacYilKaldi))   # aynisi
-
 '''
 # Fonksiyon parametreleri
 # Return anlamak icin. Bu 2 ornekte ayni. return fonksiyon icini dis dunyaya aktarmayi saglar. return ile fonksiyon icinde yapilan islemler dis dunyaya tanitilir
@@ -889,8 +852,6 @@ def paraCek(hesap, miktar) :
 paraCek(hesapAa, 3000)
 paraCek(hesapAa, 2000)
 '''
-
-
 """
 # Nesne Tabanli Programlama / Object Oriented Programing (OOP)
 # class
@@ -1125,8 +1086,6 @@ print(str(m))   # Aa by Bb cevabini verir
 
 # https://docs.python.org/3/reference/datamodel.html    gibi kaynaklarda fazlasi mevcut
 """
-
-
 """
 # Pytonda Moduller
 # Moduller kendileri arasinda iletisim saglayabilir
@@ -1195,8 +1154,6 @@ print(result)
 # Kendi modulunu olusturmak
 # example.py olustur farkli bir py de import example yazildiginda gelir
 """
-
-
 """
 # Hata (Error) ve Hata Yonetimi (Error Handling)
 # https://docs.python.org/3/library/exceptions.html
@@ -1272,54 +1229,191 @@ if x > 5:
 """
 
 
-"""
+'''
 # Dosya Yonetimi / Opening Files & Writing
-# open(dosyaAdi, dosyaErişmeModu)
-# dosyaErişmeModu = dosyayi hangi amacla actigimizi belirtir
-# "w": (Write) yazma modu. Dosyayı konumda oluşturur. Dosya içeriğini siler ve yeniden ekleme yapar. 
+# Dosya açmak ve oluşturmak için open() fonksiyonu kullanılır.
+# Kullanımı: open(dosya_adi,dosya_erişme_modu)
+# dosya_erişme_modu => dosyayı hangi amaçla açtığımızı belirtir.
+
+# "w": (Write) yazma modu. 
+#    ** Dosyayı konumda oluşturur. 
+#    ** Dosya içeriğini siler ve yeniden ekleme yapar. 
+
+# file = open("newfile.txt","w")
+# file = open("C:/users/sadikturan/desktop/newfile.txt","w")
+# file.close()
+
+# file = open("newfile.txt","w",encoding='utf-8')
+# file.write("Sadık Turan")
+# file.close()
+
 # "a": (Append) ekleme. Dosya konumda yoksa oluşturur.
-# "r": (Read) okuma. varsayılan. dosya konumda yoksa hata verir.
+# file = open("newfile.txt","a",encoding='utf-8')
+# file.write("\nÇınar Turan")
+# file.write("Çınar Turan\n")
+# file.close()
+
 # "x": (Create) oluşturma. Dosya zaten varsa hata verir.
+# file = open("newfile2.txt","x",encoding='utf-8')
 
-file = open("newfile.txt","w")   # acti
-file = open("C:/users/alptunga/desktop/newfile.txt","w")   # C:/users/alptunga/desktop/newfile.txt burada dosya olusturur
-file.close()   # kapatti
+# "r": (Read) okuma. varsayılan. dosya konumda yoksa hata verir.
 
-file = open("newfile.txt","w",encoding='utf-8')   # encoding='utf-8' turkce karakter gibi birçok karakteri okumasini saglar
-file.write("Aa")   # dosya icine Aa yazar
+# try:    
+#     file = open("newfile2.txt","r")
+#     print(file)
+# except FileNotFoundError:
+#     print("dosya okuma hatası")
+# finally:
+#     print("dosya kapandı.")
+#     file.close()
+
+file = open("newfile.txt","r", encoding = "utf-8")
+
+# ********** for döngüsü
+
+# for i in file:
+#     print(i, end="")
+
+# ********** read() fonksiyonu
+
+# content1 = file.read()
+
+# print("içerik 1")
+# print(content1)
+
+# content2 = file.read()
+
+# print("içerik 2")
+# print(content2)
+
+# content = file.read(5)
+# content = file.read(3)
+# content = file.read(3)
+
+# print(content)
+
+# ********** readline() fonksiyonu
+
+# print(file.readline(),end="")
+# print(file.readline(),end="")
+# print(file.readline(),end="")
+# print(file.readline(),end="")
+# print(file.readline(),end="")
+# print(file.readline())
+# print(file.readline())
+# print(file.readline())
+
+# ********** readlines() fonksiyonu
+
+# liste = file.readlines()
+
+# print(liste[0])
+# print(liste[1])
+# print(liste[2])
+
 file.close()
 
-file = open("newfile.txt","a",encoding='utf-8')   # a Append var olan dosya icine ekleme yapar
-file.write("\nBb")
-file.write("Cc\n")
-file.close()
+with open("newfile.txt","r",encoding="utf-8") as file:
+    content = file.read(10)
+    print(content)
+    file.seek(0)
+    print(file.tell())
+    content2 = file.read(10)
+    print(content2)
 
-file = open("newfile2.txt","x",encoding='utf-8')
+# with open("newfile.txt","r+", encoding="utf-8") as file:
+#     file.seek(20)
+#     file.write("deneme")
 
-content = file.read()   # var olan dosyayi okur
-print("içerik")
-print(content)
-content = file.read(5)   #5 karakter okur
-"""
+# with open("newfile.txt","r+", encoding="utf-8") as file:
+#     print(file.read())
+
+# ***** Sayfa sonunda güncelleme *****
+
+# with open("newfile.txt","a", encoding="utf-8") as file:
+#     file.write("\nEmel Turan")
+
+# ***** Sayfa başında güncelleme *****
+
+# with open("newfile.txt","r+", encoding="utf-8") as file:
+#     content = file.read()
+#     content = "Efe Turan\n" + content
+#     file.seek(0)
+#     file.write(content)
+
+# ***** Sayfa ortasında güncelleme *****
+
+with open("newfile.txt","r+", encoding="utf-8") as file:
+    list = file.readlines()
+    list.insert(1,"Yılmaz Aygün\n")
+    file.seek(0)
+    file.writelines(list)
+
+with open("newfile.txt","r", encoding="utf-8") as file:
+    print(file.read())
+
+# Alistirma
+# Ogrenci kayit programi
+def not_hesapla(satir):
+    satir = satir[:-1]
+    liste = satir.split(':')
+    ogrenciAdi = liste[0]
+    notlar = liste[1].split(',')
+    not1 = int(notlar[0])
+    not2 = int(notlar[1])
+    not3 = int(notlar[2])
+    ortalama = (not1+not2+not3)/3
+    if ortalama>=90 and ortalama<=100:
+        harf = "AA"
+    elif ortalama>=85 and ortalama<=89:
+        harf = "BA"
+    elif ortalama>=80 and ortalama<=84:
+        harf = "BB"
+    elif ortalama>=75 and ortalama<=79:
+        harf = "CB"
+    elif ortalama>=70 and ortalama<=74:
+        harf = "CC"
+    elif ortalama>=65 and ortalama<=69:
+        harf = "DC"
+    elif ortalama>=60 and ortalama<=64:
+        harf = "DD"
+    elif ortalama>=50 and ortalama<=59:
+        harf = "FD"
+    else:
+        harf = "FF"
+    return ogrenciAdi + ": " + harf + "\n"
+def ortalamalari_oku():
+    with open("sinav_notlari.txt","r",encoding="utf-8") as file:
+        for satir in file:
+            print(not_hesapla(satir))
+def not_gir():
+    ad = input('Öğrenci adı: ')
+    soyad = input('Öğrenci soyad: ')
+    not1 = input('not 1: ')
+    not2 = input('not 2: ')
+    not3 = input('not 3: ')
+    with open("sinav_notlari.txt","a", encoding="utf-8") as file:
+        file.write(ad+' '+ soyad+ ':'+not1+','+not2+','+not3+'\n')        
+def notlari_kayitet():
+    with open('sinav_notlari.txt',"r",encoding="utf-8") as file:
+        liste = []
+        for i in file:
+            liste.append(not_hesapla(i))
+        with open("sonuclar.txt","w",encoding="utf-8") as file2:
+            for i in liste:
+                file2.write(i)
+while True:
+    islem = input('1- Notları Oku\n2- Not Gir\n3- Notları Kayıt Et\n4- Çıkış\n')
+    if islem == '1':
+        ortalamalari_oku()
+    elif islem == '2':
+        not_gir()
+    elif islem == '3':
+        notlari_kayitet()
+    else:
+        break
+'''
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Fonksiyonlarin Ileri Seviye Ozellikleri
