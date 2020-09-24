@@ -1415,5 +1415,104 @@ while True:
 '''
 
 
-
+"""
 # Fonksiyonlarin Ileri Seviye Ozellikleri
+# encapsulation (kapsulleme demek)
+def outer(num1):
+     print('outer')
+     def inner_increment(num1):
+         print('inner')
+         return num1 + 1
+     num2 = inner_increment(num1)   # burada fonksiyonu cagirmazsak bu fonksiyon calismaz
+     print(num1, num2)
+outer(10)
+inner_increment(10)   # bu calismaz cunku outer fonksiyonunu calistirmak lazim once
+
+# fonksiyonlari parametre olarak cagirma
+def toplama(a,b):
+    return a+b
+def cikarma(a,b):
+    return a-b
+def carpma(a,b):
+    return a*b
+def bolme(a,b):
+    return a/b
+def islem(f1, f2, f3, f4, islem_adi):
+    if islem_adi== "toplama":
+        print(f1(2,3))
+    elif islem_adi == "cikarma":
+        print(f2(5,3))
+    elif islem_adi == "carpma":
+        print(f3(3,4))
+    elif islem_adi == "bolme":
+        print(f4(10,2))
+    else:
+        print("geçersiz işlem...")
+islem(toplama, cikarma, carpma, bolme, "toplama")
+islem(toplama, cikarma, carpma, bolme, "cikarma")
+islem(toplama, cikarma, carpma, bolme, "bolme")
+islem(toplama, cikarma, carpma, bolme, "carpma")
+islem(toplama, cikarma, carpma, bolme, "carpmaa")
+
+# decorator
+def my_decorator(func):
+     def wrapper(name):
+         print("fonksiyondan önceki işlemler")
+         func(name)
+         print("fonksiyondan sonraki işlemler")
+     return wrapper
+@my_decorator
+def sayHello(name):
+     print("hello", name)
+sayHello("ali")
+
+import math
+import time
+def calculate_time(func):
+    def inner(*args,**kwargs):        
+        start = time.time()
+        time.sleep(1)
+        func(*args,**kwargs)        
+        finish = time.time()
+        print("fonksiyon "+func.__name__ +" " + str(finish-start) + " saniye sürdü.")
+    return inner
+@calculate_time
+def usalma(a,b):
+    print(math.pow(a,b))   
+@calculate_time
+def faktoriyel(num):
+    print(math.factorial(num))
+@calculate_time
+def toplama(a,b):
+    print(a+b)
+usalma(2,3)
+faktoriyel(4)
+toplama(10,20)
+"""
+
+
+"""
+# Iterator
+liste = [1,2,3,4,5]
+iterator = iter(liste)
+print(next(iterator))   #tek tek sirayla liste elemanlarini gosterir
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+
+for i in liste:   # 2. yol
+    print(i)
+"""
+
+
+"""
+# Generators    bellekte yer tutmaz
+generator = (i**3 for i in range(5))
+for i in generator:
+    print(i)
+"""
+
+
+
+# Ileri seviye Python Modulleri
